@@ -7,46 +7,8 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Session {
+model Item {
     id                    Int               @id @default(autoincrement())
     createdAt             DateTime          @default(now())
     updatedAt             DateTime          @updatedAt
-    publicId              String            @unique @db.Text
-    linkedOpenedAt        DateTime?          
-    classifiedAt          DateTime?
-    completedAt           DateTime?
-    isVehicleDrivable     Boolean?
-    isWindscreenShattered Boolean?
-    haveAirbagsDeployed   Boolean?
-    mileage               Int?
-    rating                Int?               @db.SmallInt
-    damageLocations       String[]
-    damagedParts          String[]
-    vehiclePhotos         VehiclePhoto[]
-    damagePhotos          DamagePhoto[]
-    additionalPhotos      AdditionalPhoto[]
-}
-
-model VehiclePhoto {
-    id        Int     @id @default(autoincrement())
-    sessionId Int
-    session   Session @relation(fields: [sessionId], references: [id])
-    format    String  @db.Text
-    path      String  @db.Text
-}
-
-model DamagePhoto {
-    id        Int     @id @default(autoincrement())
-    sessionId Int
-    session   Session @relation(fields: [sessionId], references: [id])
-    format    String  @db.Text
-    path      String  @db.Text
-}
-
-model AdditionalPhoto {
-    id        Int     @id @default(autoincrement())
-    sessionId Int
-    session   Session @relation(fields: [sessionId], references: [id])
-    format    String  @db.Text
-    path      String  @db.Text
 }

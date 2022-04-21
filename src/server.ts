@@ -1,9 +1,12 @@
 import express from 'express'
+import { health } from './health'
 
 export const createServer = (): express.Express => {
     const app = express()
 
     app.use(jsonParser)
+
+    app.get('/health', health)
 
     app.use(errorHandler)
 
