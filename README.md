@@ -41,11 +41,11 @@ Create a new directory called `.devcontainer` and file in the directory called `
   "image": "node:16.14.0",
   "remoteUser": "node",
   "extensions": [
-		  "esbenp.prettier-vscode",
-		  "dbaeumer.vscode-eslint",
-		  "Prisma.prisma",
-		  "yzhang.markdown-all-in-one"
-	]
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "Prisma.prisma",
+    "yzhang.markdown-all-in-one"
+  ]
 }
 ```
 Where `name` is the name of the project, `image` is the image that the container should be built from and `user` is the user that we will sign in as in the container. We have also added some helpful vscode extensions like prettier and eslint so that the developer doesn't have to.
