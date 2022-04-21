@@ -5,9 +5,9 @@ services:
         command: ['-c', 'log_statement=all']
         ports:
             - '2345:5432'
-        container_name: car_owner_app_postgres_test
+        container_name: dev_containers_postgres_test
         environment:
-            POSTGRES_DB: 'car_owner_app_test'
-            POSTGRES_USER: 'car_owner_app_postgres'
+            POSTGRES_DB: 'dev_containers_test'
+            POSTGRES_USER: 'dev_containers_postgres'
             POSTGRES_PASSWORD: 'p0stgr3s'
             POSTGRES_HOST_AUTH_METHOD: 'trust'

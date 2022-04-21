@@ -1,17 +1,19 @@
 {
-    "name": "@coa/data-collection-service",
+    "name": "dev-containers",
     "version": "0.0.1",
-    "description": "Handles the key functionality of gathering data from the Car Owner.",
+    "description": "vscode dev containers workshop",
     "main": "build/index.js",
     "scripts": {
-        "dev": "yarn db:start:local && yarn db:migrate:local && nodemon --exec 'ts-node -r dotenv/config ./src/index.ts'",
+        "dev": "nodemon --exec 'ts-node -r dotenv/config ./src/index.ts'",
         "build": "tsc",
         "start": "node build/index.js",
         "lint:check": "eslint . --ext .ts && prettier '*.{json,ts,md,yaml}' --check",
         "lint:fix": "eslint . --ext .ts --fix && prettier '*.{json,ts,md,yaml}' --write",
         "test:unit": "jest \\.unit\\.test\\.ts",
-        "test:api": "yarn db:start:test && yarn db:migrate:test && DOTENV_CONFIG_PATH=.env.test jest \\.api\\.test\\.ts --setupFiles dotenv/config --runInBand",
-        "test": "yarn test:unit && yarn test:api",
+        "test:int": "DOTENV_CONFIG_PATH=.env.test jest \\.int\\.test\\.ts --setupFiles dotenv/config --runInBand",
+        "test": "yarn test:unit && yarn test:int",
+        "deps:local": "yarn db:start:local && yarn db:migrate:local",
+        "deps:test": "yarn db:start:test && yarn db:migrate:test",
         "db:start:local": "docker-compose -f docker-compose.local.yaml up -d",
         "db:start:test": "docker-compose -f docker-compose.test.yaml up -d",
         "db:migrate:local": "dotenv -e .env npx prisma migrate dev",
@@ -19,14 +21,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tractableai/car-owner-app.git"
+        "url": "git+https://github.com/harrywithers/dev-containers.git"
     },
     "author": "",
     "license": "UNLICENSED",
     "bugs": {
-        "url": "https://github.com/tractableai/car-owner-app/issues"
+        "url": "https://github.com/harrywithers/dev-containers/issues"
     },
-    "homepage": "https://github.com/tractableai/car-owner-app#readme",
+    "homepage": "https://github.com/harrywithers/dev-containers#readme",
     "devDependencies": {
         "@babel/core": "^7.17.7",
         "@babel/preset-env": "^7.16.11",
