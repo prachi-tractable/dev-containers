@@ -22,7 +22,7 @@ We'll need to setup a local docker container and authenticate with AWS to access
 
 ## Workshop Steps
 
-### Getting Started
+### 1. Getting Started
 
 Start by forking this repository into your Github account.
 > We need to do this rather than creating a branch so that we can add the magic button at the end of the workshop.
@@ -30,7 +30,7 @@ Start by forking this repository into your Github account.
 Next clone the repository to your laptop.
 We are now the same state as a new joiner. Typically they would have to install all of the required tools before they can develop. But we are going to get vscode dev containers to do it for them.
 
-### Converting to dev containers
+### 2. Converting to dev containers
 
 Now let's convert the project to use dev containers. 
 
@@ -55,7 +55,7 @@ This command will locate the config we just added and build our basic dev contai
 
 We are now inside our dev container, open up a terminal and try `node -v`, you should see `16.14.0`, the version of the image we chose. 
 
-### Installing docker
+### 3. Installing docker
 
 Next, we need docker inside the container in order to run our postgres container. We can see that docker isn't installed yet by running `docker ps`.
 
@@ -70,7 +70,7 @@ Now open the command palette and run the `Remote-containers: Rebuild Container` 
 
 Once the container has rebuilt, try running `docker ps` again, this time you should see an empty table.
 
-### Authenticating with AWS
+### 4. Authenticating with AWS
 
 The `/health` endpoint will check for the presence of an S3 bucket in the tractable sandbox account so we'll need to authenticate with AWS to give
 the server access to that bucket.
@@ -120,7 +120,7 @@ Apply these changes by running the `Remote-containers: Rebuild Container` comman
 
 Now we can authenticate with AWS by running `saml2aws login && eval "$(saml2aws script)"` and selecting the `sandbox` account.
 
-### Testing the server
+### 5. Testing the server
 
 First, let's run the `setup.sh` script at the root of the application. This script will pull the postgres docker image and start the container for us as well as install all the npm dependencies of the project.
 
@@ -132,7 +132,7 @@ Once this has finished we can give the tests a go:
 
 We have successfully setup our development environment inside the docker container.
 
-### Final touches
+### 6. Final touches
 
 The first final touch is to add a `postCreateCommand` to the `devcontainer.json` file to automatically run the `setup.sh` script when the container has finished starting up meaning there are no manual steps:
 
