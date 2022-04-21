@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "sourceRoot": "/",
+        "sourceMap": true,
+        "inlineSources": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "lib": ["es2017"],
+        "types": ["node", "jest"],
+        "target": "es2017",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "strictNullChecks": false,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "noImplicitAny": false,
+        "esModuleInterop": true
+    },
+    "exclude": ["node_modules", "src/**/*.test.ts"],
+    "include": ["./src/**/*.*"],
+    "compileOnSave": false
+}

@@ -1,0 +1,10 @@
+src
+node_modules
+Dockerfile
+.dockerignore
+.eslintignore
+.eslintrc
+.gitignore
+.prettierrc.json
+nodemon.json
+tsconfig.json
