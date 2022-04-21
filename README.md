@@ -148,5 +148,7 @@ Finally, let's add a button to the README so that a new developer can spin up th
 
 All finished!!!
 
+Commit your changes and push them up to the remote.
+
 To test out the final product, shut the window and prune your laptop docker host: `docker container prune && docker volume prune`. Then click and the button and wait!
  
