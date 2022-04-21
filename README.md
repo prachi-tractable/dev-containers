@@ -149,19 +149,4 @@ Finally, let's add a button to the README so that a new developer can spin up th
 All finished!!!
 
 To test out the final product, shut the window and prune your laptop docker host: `docker container prune && docker volume prune`. Then click and the button and wait!
-
-## Commands
-
-- `yarn dev` - Starts a development server with hot reloading. Requires a database and S3 bucket ready for use.
-- `yarn build` - Builds a production instance of the server
-- `yarn start` - Runs the production build
-- `yarn lint:check` - Runs the linter and formatter throwing when there are errors
-- `yarn lint:fix` - Runs the linter and formatter and tries to fix any errors
-- `yarn test` - Runs the tests. Requires a database and S3 bucket ready for use.
-- `yarn deps:local` - Starts of dependencies required for local development
-- `yarn deps:test` - Starts of dependencies required for the tests
-- `yarn db:start:local` - Starts a local development database (using the [local compose file](./docker-compose.local.yaml))
-- `yarn db:start:test` - Starts a test database (using the [test compose file](./docker-compose.test.yaml))
-- `yarn db:migrate:local` - Performs a migration on the local development database and regenerates the prisma client
-- `yarn db:migrate:test` - Performs a migration on the test database
-- 
+ 
