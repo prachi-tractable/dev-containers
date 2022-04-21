@@ -1,3 +1,7 @@
-import { startServer } from './server'
+import { createServer } from './server'
 
-startServer()
+const server = createServer()
+
+server.listen(parseInt(process.env.PORT), () => {
+    console.log(`Server listening at http://localhost:${process.env.PORT}`)
+})
