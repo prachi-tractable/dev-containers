@@ -57,22 +57,7 @@ This command will locate the config we just added and build our basic dev contai
 
 We are now inside our dev container, open up a terminal and try `node -v`, you should see `16.14.0`, the version of the image we chose. 
 
-### 3. Installing docker
-
-Next, we need docker inside the container in order to run our postgres container. We can see that docker isn't installed yet by running `docker ps`.
-
-As we are already inside a container, we'll need to use a `docker-in-docker` solution. Luckily vscode makes that easy, simply open up the `devcontainer.json` file again and add the following line to it:
-```json
-  "features": {
-    "docker-in-docker": "latest"
-  },
-```
-
-Now open the command palette and run the `Remote-containers: Rebuild Container` to apply these changes to the container.
-
-Once the container has rebuilt, try running `docker ps` again, this time you should see an empty table.
-
-### 4. Authenticating with AWS
+### 3. Authenticating with AWS
 
 The `/health` endpoint will check for the presence of an S3 bucket in the tractable sandbox account so we'll need to authenticate with AWS to give
 the server access to that bucket.
@@ -121,6 +106,21 @@ We can also mount our `saml2aws` and `aws` files into the container so that we c
 Apply these changes by running the `Remote-containers: Rebuild Container` command again
 
 Now we can authenticate with AWS by running `saml2aws login && eval "$(saml2aws script)"` and selecting the `sandbox` account.
+
+### 4. Installing docker
+
+Next, we need docker inside the container in order to run our postgres container. We can see that docker isn't installed yet by running `docker ps`.
+
+As we are already inside a container, we'll need to use a `docker-in-docker` solution. Luckily vscode makes that easy, simply open up the `devcontainer.json` file again and add the following line to it:
+```json
+  "features": {
+    "docker-in-docker": "latest"
+  },
+```
+
+Now open the command palette and run the `Remote-containers: Rebuild Container` to apply these changes to the container.
+
+Once the container has rebuilt, try running `docker ps` again, this time you should see an empty table.
 
 ### 5. Testing the server
 
