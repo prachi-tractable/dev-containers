@@ -2,6 +2,8 @@
 
 This workshop will guide you through setting up vscode dev containers to work with an existing project.
 
+It follows on from the Car Owner App presentation in the Engineering Huddle which you can find on [Coda](https://coda.io/d/Engineering_dvUWsMuBgNj/2022-04-14-Engineering-Huddle_suFas#_lujUe).
+
 The aim of the workshop is that a new user will be able to click a button on the Github repo that will setup their
 workspace for them. The user should immediately be able to run the server and execute the tests.
 
