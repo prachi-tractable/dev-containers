@@ -139,7 +139,7 @@ We have successfully setup our development environment inside the docker contain
 The first final touch is to add a `postCreateCommand` to the `devcontainer.json` file to automatically run the `setup.sh` script when the container has finished starting up meaning there are no manual steps:
 
 ```json
-  "postCreateCommand": "../setup.sh"
+  "postCreateCommand": "./setup.sh"
 ```
 
 Finally, let's add a button to the README so that a new developer can spin up their development environment at the press of a button. Add the following to your README making sure to replace the link with a link to your own github repo:
