@@ -52,7 +52,7 @@ Create a new directory called `.devcontainer` and file in the directory called `
 ```
 Where `name` is the name of the project, `image` is the image that the container should be built from and `user` is the user that we will sign in as in the container. We have also added some helpful vscode extensions like prettier and eslint so that the developer doesn't have to.
 
-Now we are ready to start out container, do so by opening the vscode command palette and running the `Remote-containers: Reopen in container` command.
+Now we are ready to start out container, do so by opening the vscode command palette (`CMD + SHIFT + P`/ `CTRL + SHIFT + P`) and running the `Remote-containers: Reopen in container` command.
 This command will locate the config we just added and build our basic dev container for us. It can take a little bit of time the first time you run it. You will know when it has finished once the bottom left corner of the vscode window shows green.
 
 We are now inside our dev container, open up a terminal and try `node -v`, you should see `16.14.0`, the version of the image we chose. 
